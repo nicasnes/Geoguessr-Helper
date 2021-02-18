@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "Geoguessr Helper",
+  "description": "A simple Chrome extension to help you in Geoguessr.",
+  "author": "Nic Asnes",
+  "version": "0.1",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "GeoGuessr Helper",
+    "default_popup" : "popup.html"
+  },
+  "permissions": [
+    "tabs",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.geoguessr.com/battle-royale/*"
+      ],
+      "exclude_matches": ["https://www.geoguessr.com/battle-royale"],
+      "js": ["content.js"]
+    }
+  ]
+}
