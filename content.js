@@ -10,7 +10,6 @@ function getServerJSON(br) {
   return "https://game-server.geoguessr.com/api/battle-royale/" + id;
 }
 
-
 // determineLocation(url: string): Object{number, number, string}
 function determineCoords(url) {
   let coords = {};
@@ -26,12 +25,8 @@ function determineCoords(url) {
           coords.lat = roundArr[roundArr.length-1].lat;
           coords.lng = roundArr[roundArr.length-1].lng;
           coords.panoId = roundArr[roundArr.length-1].panoId;
-          console.log(coords.lat);
-          console.log(coords.lng);
-          console.log(coords.panoId)
           destURL = 'https://maps.google.com/?q=' + coords.lat + ',' + coords.lng;
           chrome.storage.sync.set({urlKey: destURL}, function(result){
-          console.log('Value is set to ' + destURL);
           });
         }
       }
@@ -43,13 +38,11 @@ function determineCoords(url) {
 function setURL() { 
   console.log("Setting url to:" + destURL);
   chrome.storage.sync.get(['urlKey'], function(result) { 
-    console.log("result is: " + result.urlKey);
     document.getElementById('link').setAttribute("href", result.urlKey);
   });
 }
 
 if (location.href.includes("geoguessr")) {
-  console.log("server json from api: " + serverJSON);
   determineCoords(serverJSON);
 }
 
