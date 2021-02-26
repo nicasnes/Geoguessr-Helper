@@ -3,12 +3,15 @@
 let serverJSON = getServerJSON(location.href);
 let destURL = ""
 
+/* Given a battle royale URL, extract the game id and return JSON from server */
+// getServerJSON(br: string): string
 function getServerJSON(br) {
   let id = br.substring(br.indexOf("royale/") + 7);
   return "https://game-server.geoguessr.com/api/battle-royale/" + id;
 }
 
-// determineLocation(url: string): Object{number, number}
+
+// determineLocation(url: string): Object{number, number, string}
 function determineCoords(url) {
   let coords = {};
   fetch(url, {
@@ -27,15 +30,11 @@ function determineCoords(url) {
           console.log(coords.lng);
           console.log(coords.panoId)
           destURL = 'https://maps.google.com/?q=' + coords.lat + ',' + coords.lng;
-          chrome.storage.local.set({urlKey: destURL}, function(result){
+          chrome.storage.sync.set({urlKey: destURL}, function(result){
           console.log('Value is set to ' + destURL);
           });
         }
       }
-      
-      
-      // setURL(destURL);
-      // window.open(destURL);
     })
   .catch(err => { throw err; });
   return coords;
@@ -43,7 +42,7 @@ function determineCoords(url) {
 
 function setURL() { 
   console.log("Setting url to:" + destURL);
-  chrome.storage.local.get(['urlKey'], function(result) { 
+  chrome.storage.sync.get(['urlKey'], function(result) { 
     console.log("result is: " + result.urlKey);
     document.getElementById('link').setAttribute("href", result.urlKey);
   });
@@ -66,4 +65,5 @@ if (location.href.includes("popup")) {
  * Handle error with undefined,undefined after wrong guess
  * Make it so you don't have to refresh
  * You rank X in this lobby.
+ * Find most recent coordinates, not just last index coords
  */
