@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Geoguessr Helper",
-  "description": "Displays the exact location of a Battle Royale on a map post-round.",
+  "description": "Your best friend in Geoguessr — Battle Royale locations & more coming!",
   "author": "Nic Asnes",
   "version": "0.1",
   "browser_action": {
