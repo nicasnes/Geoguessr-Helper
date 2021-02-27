@@ -1,0 +1,13 @@
+body {
+  min-height: 75px;
+  min-width: 175px;
+}
+#link {
+  color:red;
+}
+.text {
+  font-size: medium;
+}
+.center {
+  text-align: center;
+}
