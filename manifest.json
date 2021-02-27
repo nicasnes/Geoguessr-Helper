@@ -3,7 +3,7 @@
   "name": "Geoguessr Helper",
   "description": "A simple Chrome extension to help you in Geoguessr.",
   "author": "Nic Asnes",
-  "version": "0.1",
+  "version": "1.0",
   "browser_action": {
     "default_icon": "images/icon128.png",
     "default_title": "GeoGuessr Helper",
