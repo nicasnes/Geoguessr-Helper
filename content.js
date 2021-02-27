@@ -53,9 +53,7 @@ if (location.href.includes("popup")) {
 /**
  * 
  * TODO:
- * Change from battle-royale/* to exclude battle-royale/ main page --- fixed, now fix on first load
- * Handle error with undefined,undefined after wrong guess
- * Make it so you don't have to refresh
+ * Fix open url on first load
  * You rank X in this lobby.
  * Find most recent coordinates, not just last index coords
  */
