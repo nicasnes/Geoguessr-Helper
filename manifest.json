@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
   "name": "Geoguessr Helper",
-  "description": "A simple Chrome extension to help you in Geoguessr.",
+  "description": "Displays the exact location of a Battle Royale on a map post-round.",
   "author": "Nic Asnes",
-  "version": "1.0",
+  "version": "0.1",
   "browser_action": {
     "default_icon": "images/icon128.png",
     "default_title": "GeoGuessr Helper",
