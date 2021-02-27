@@ -6,7 +6,7 @@
 
 let endpointURL = getEndpoint(location.href);
 let destURL = "";
-let interval = 30;
+let interval = 5;
 
 /**
  * If in a Battle Royale game, run coordHandler every *interval* seconds.
